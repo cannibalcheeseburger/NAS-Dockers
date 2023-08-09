@@ -1,0 +1,18 @@
+---
+version: "2.1"
+services:
+  sonarr:
+    image: lscr.io/linuxserver/sonarr:latest
+    container_name: sonarr
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - TZ=Asia/Kolkata
+    volumes:
+      - /data/config/sonarr:/config
+      - /hddmain/media/tv:/data/media/tv #optional
+      - /hddmain/torrent:/data/torrent #optional
+      - /hddmain/media/anime:/data/media/anime
+    ports:
+      - 8989:8989
+    restart: unless-stopped
