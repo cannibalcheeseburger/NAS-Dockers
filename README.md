@@ -6,5 +6,5 @@ Docker-compose Yaml files to create dockers for NAS Server.
 
 ### Creating and starting docker
 Eg.
-``cd jellyfin``
+``cd jellyfin``\
 ``docker-compose up -d``
