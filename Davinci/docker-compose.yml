@@ -1,0 +1,18 @@
+version: '3.3'
+services:
+    studio-server:
+        container_name: studio-server
+        restart: unless-stopped
+        network_mode: bridge
+        environment:
+            - TZ=Asia/Kolkata
+        ports:
+            - '5432:5432'
+            - '50059:50059'
+            - '8543:8543'
+        volumes:
+            - '~/DaVinci/hooks/:/var/studio-server/hooks/'
+            - '~/DaVinci/database/:/var/studio-server/database/'
+            - '~/DaVinci/backups/:/var/studio-server/backups/'
+            - '~/DaVinci/jobs/:/etc/cron.d/'
+        image: 'allebb/studio-server:latest'
